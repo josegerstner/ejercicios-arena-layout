@@ -18,11 +18,11 @@ class Series {
 	
 	@Dependencies("serieSeleccionada")
 	def getSeries(){		
-		series.map[serie | serie.nombre]
+		series.map[ nombre ]
 	}
 	
 	@Dependencies("serieSeleccionada")
-	def List<String>getActores(){
+	def List<String> getActores(){
 		series.findFirst(serie | serie.nombre.equals(serieSeleccionada)).actores.map[nombre]
 	}
 	

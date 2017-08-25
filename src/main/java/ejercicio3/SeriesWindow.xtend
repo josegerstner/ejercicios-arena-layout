@@ -10,6 +10,7 @@ import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.List
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.widgets.Button
+import org.uqbar.arena.bindings.ObservableProperty
 
 class SeriesWindow extends MainWindow<Series> {
 	new() {
@@ -58,8 +59,9 @@ class SeriesWindow extends MainWindow<Series> {
 		
 		new List(panelDer) => [
 			allowNull(false)
+			bindItems(new ObservableProperty("serieSeleccionada"))
             items <=> "actores"
-            //value <=> "actorSeleccionado"
+            value <=> "actorSeleccionado"
             width = 200
             height = 150
         ]
